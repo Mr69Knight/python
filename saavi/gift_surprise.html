@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Gift 🎁</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: black;
+      color: white;
+      overflow: hidden;
+    }
+    #giftBtn {
+      font-size: 2rem;
+      padding: 20px 40px;
+      background: purple;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20%;
+    }
+    #message {
+      font-size: 2rem;
+      margin-top: 20px;
+      display: none;
+    }
+    #surpriseImg {
+      display: none;
+      max-width: 100vw;
+      max-height: 100vh;
+      object-fit: contain;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="giftBtn">🎁 Open Gift</button>
+  <div id="message">🎉You’re Amazing! Saavi  🎶</div>
+  <div id="message2">❤️❤️❤️I LOVE YOU BACCHA❤️❤️❤️ !</div>
+  <img id="surpriseImg" src="star.png" alt="Surprise Image">
+
+  <audio id="music" src="happy.mp3"></audio>
+
+  <script>
+    const btn = document.getElementById("giftBtn");
+    const msg = document.getElementById("message");
+    const img = document.getElementById("surpriseImg");
+    const music = document.getElementById("music");
+
+    btn.addEventListener("click", () => {
+      // Play music
+      music.play();
+
+      // Hide button
+      btn.style.display = "none";
+
+      // Show message after 2 sec
+      setTimeout(() => {
+        msg.style.display = "block";
+      }, 2000);
+
+      // Show image after 4 sec
+      setTimeout(() => {
+        img.style.display = "block";
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>
